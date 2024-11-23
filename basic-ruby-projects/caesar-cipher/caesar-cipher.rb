@@ -32,10 +32,9 @@ end
 
 def caesar_cipher(str_to_be_encrypted, shifting_key)
 
-  orig_str_chars = str_to_be_encrypted.split('')
   encrypted_chars = []
 
-  orig_str_chars.each do |c|
+  str_to_be_encrypted.each_char do |c|
     if (c >= "a") && (c <= "z")
       encrypted_chars.push(caesar_cipher_lowercase_chars(c, shifting_key))
     elsif (c >= "A") && (c <= "Z" )
