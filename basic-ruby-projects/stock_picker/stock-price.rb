@@ -21,7 +21,11 @@ def stock_picker(stock_price)
   the_day_to_sell = nil
 
   stock_price.each_with_index do |current_stock_price, day|
-    (day + 1).upto(stock_price.length - 1) do |current_day|
+    
+    last_day = stock_price.length - 1
+    following_day = day + 1
+
+    (following_day).upto(last_day) do |current_day|
       if (stock_price[current_day] - current_stock_price) > max_profit
         max_profit = stock_price[current_day] - current_stock_price
         the_day_to_buy = day
